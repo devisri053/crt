@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick ="postData()">POST</button>
+    <h1 id="123"></h1>
+    <script>
+        function postData()
+        {
+            const ns = {}
+            ns.id = prompt("Enter student id : ")
+            ns.name = prompt("Enter student name : ")
+            ns.age = prompt("Enter student age : ")
+            ns.dob = prompt("Enter student dob : ")
+
+            const req = new XMLHttpRequest()
+            req.open("POST",'http://localhost:5050/student',true)
+            req.onload = function()
+            {
+                document.getElementById('123').innerHTML = "student data inserted"
+            }
+            req.send(JSON.stringify(ns))
+        }
+    </script>
+</body>
+</html>

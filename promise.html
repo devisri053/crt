@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "abc"></h1>
+    <script>
+        const obj = new Promise(function(resolve,reject)
+        {
+            let x =prompt("Enter a value")
+            if(x%2 == 0)resolve("Even")
+            else reject("Odd")
+        })
+        obj.then
+        (
+            function(value)
+            {
+                document.getElementById('abc').innerHTML = value
+            },
+            function(error)
+            {
+                document.getElementById('abc').innerHTML = error
+
+            } 
+        )
+    </script>
+</body>
+</html>

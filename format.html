@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick ="getData()">GET</button>
+    <div id="123"></div>
+    <script>
+        let s = "<table>"
+        function getData()
+        {
+            const req = new XMLHttpRequest()
+            req.open("GET",'http://localhost:5050/student')
+            req.onload = function()
+            {
+                const data = JSON.parse(this.responseText)
+                for(let i of data)
+                {
+                    s += '<tr>'
+                    s += '<td>' + i["id"] + '</td>'
+                    s += '<td>' + i["name"] + '</td>'
+                    s += '<td>' + i["age"] + '</td>'
+                    s += '<td>' +new Date(i['dob']) + '</td>'
+                    s += '</tr>'
+
+                }
+                s += '</table>'
+                document.getElementById('123').innerHTML = s ;
+            }
+            req.send()
+        }
+    </script>
+</body>
+</html>
