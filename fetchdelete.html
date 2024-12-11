@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick ="deleteData()">DELETE</button>
+    <script>
+        async function deleteData()
+        {
+            const x = await fetch("http://localhost:5050/student/603",
+            {
+                method : "DELETE",
+            }
+            ).then(
+                (value) => {console.log('data deleted')},
+                (error) => {console.log('data not deleted',error)}
+            )
+
+        }
+    </script>
+</body>

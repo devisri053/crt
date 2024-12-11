@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "abc"></h1>
+    <script>
+        
+        async function abc() 
+        {
+            const p = await new Promise((resolve,reject) => 
+            {
+                let x = 0
+                if(x==0)resolve('ok')
+                else reject('error')
+            })
+            return p
+        }
+        x.then
+        (
+            function(value)
+            {
+                document.getElementById('abc').innerHTML = value
+            
+            } 
+        )
+        
+    </script>
+</body>
+</html>
